@@ -1,17 +1,21 @@
-public class ANDNeuron
-{
+public class ORNeuron {
     private int input1 = 0;
     private int input2 = 0;
     private double weight = 1.0;
-    private double threshold = 1.5;
+    private double threshold = 0.9;
 
-    public ANDNeuron(int input1, int input2) {
+    public ORNeuron(int input1, int input2) {
         this.input1 = input1;
         this.input2 = input2;
     }
 
-    public int doFire()
-    {
+    public int doFire() {
+        if (this.input1 == -1)
+            this.input1 = 0;
+        else if (this.input2 == -1) {
+            this.input2 = 0;
+        }
+
         if (this.input1 * this.weight + this.input2 * this.weight > this.threshold) {
             return 1;
         }
@@ -19,8 +23,7 @@ public class ANDNeuron
     }
 
     //SETTERS
-    public void setInput1(int input1)
-    {
+    public void setInput1(int input1) {
         this.input1 = input1;
     }
 

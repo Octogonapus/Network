@@ -1,11 +1,11 @@
-public class ANDNeuron
+public class NANDNeuron
 {
     private int input1 = 0;
     private int input2 = 0;
     private double weight = 1.0;
     private double threshold = 1.5;
 
-    public ANDNeuron(int input1, int input2) {
+    public NANDNeuron(int input1, int input2) {
         this.input1 = input1;
         this.input2 = input2;
     }
@@ -13,9 +13,9 @@ public class ANDNeuron
     public int doFire()
     {
         if (this.input1 * this.weight + this.input2 * this.weight > this.threshold) {
-            return 1;
+            return -1;
         }
-        return -1;
+        return 1;
     }
 
     //SETTERS
