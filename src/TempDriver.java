@@ -43,6 +43,6 @@ public class TempDriver {
                 {1, 1, -1, 0}
         };
 
-        int outputMatrix[] = {N1.doFireB(), N2.doFireB(), N3.doFireB(), N4.doFireB()};
+        N1.setInput1(N2.doFire());
     }
 }

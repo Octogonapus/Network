@@ -8,7 +8,7 @@ public class BaseNeuron {
     }
 
     //Basic Method
-    public int doFireB() {
+    public int doFire() {
         if (input1 + weight > threshold) {
             return 1;
         }
