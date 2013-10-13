@@ -7,22 +7,40 @@ public class BaseNeuron {
         this.input1 = input1;
     }
 
-    //I'm being stupid and summing them, but it works in my mind
-    //Then again, I haven't even begun to make the Hopfield yet, so who knows if this works
-    //Multiplication just didn't work with BiPolar values
-    //(I don't feel like normalization right now)
-    public int doFire() {
+    //Basic Method
+    public int doFireB() {
         if (input1 + weight > threshold) {
             return 1;
         }
         return -1;
     }
 
+    //Hyperbolic Tangent Method
+    public boolean doFireT() {
+        return Math.tanh(input1) >= 0;
+    }
+
     public void setInput1(int input1) {
         this.input1 = input1;
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setThreshold(double threshold) {
+        this.threshold = threshold;
+    }
+
     public int getInput1() {
         return input1;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getThreshold() {
+        return threshold;
     }
 }
